@@ -26,7 +26,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center  pt-20 relative overflow-hidden section-hero-body">
+    <section data-aos="fade-down" className="min-h-screen flex items-center justify-center  pt-20 relative overflow-hidden section-hero-body">
       {/* Soft background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>

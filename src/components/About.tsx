@@ -18,21 +18,21 @@ const About = () => {
           </div>
           
           <div className="max-w-3xl mx-auto">
-            <h3 className="text-2xl font-semibold text-white mb-6 text-center">
+            <h3 data-aos="fade-up" className="text-2xl font-semibold text-white mb-6 text-center">
               Passionate about Technology & Innovation
             </h3>
             
-            <p className="text-gray-300 mb-6 leading-relaxed text-center">
+            <p data-aos="fade-up" className="text-gray-300 mb-6 leading-relaxed text-center">
               I’m a curious and persistent Computer Science graduate student whose journey began with a simple Python game where the goal was to guide a path from start to finish. 
               That early experience sparked my passion for programming and set me on a path of exploration. Since then, I have delved into many facets of technology, building strong skills in both software development and machine learning. 
               From developing full stack projects like a Travel Advisor to conducting research on music recommendation systems during my undergraduate studies, I have gained valuable insights across diverse domains. These experiences have shaped my unique perspective and technical expertise.
             </p>
-            <p className="text-gray-300 mb-8 leading-relaxed text-center">
+            <p data-aos="fade-up" className="text-gray-300 mb-8 leading-relaxed text-center">
               My interest in cybersecurity has also grown through coursework and research focused on system vulnerabilities and defense mechanisms. 
               This broadens my understanding of building secure and reliable applications.
             </p>
             
-            <p className="text-gray-300 mb-8 leading-relaxed text-center">
+            <p data-aos="fade-up" className="text-gray-300 mb-8 leading-relaxed text-center">
               I am optimistic and open minded, always ready to face challenges with persistence and a positive attitude. 
               I believe that learning is a lifelong journey, and I constantly seek new technologies and methodologies to improve myself. 
               I thrive in collaborative environments, valuing diverse perspectives and teamwork. 
@@ -40,20 +40,20 @@ const About = () => {
 
             </p>
             
-            <div className="grid md:grid-cols-3 gap-6">
+            <div data-aos="fade-left" className="grid md:grid-cols-3 gap-6">
               <div className="text-center p-6 bg-gray-800/50 rounded-lg backdrop-blur-sm">
                 <BookOpen className="text-blue-400 mx-auto mb-3" size={32} />
                 <h4 className="font-semibold text-white mb-2">Continuous Learner</h4>
                 <p className="text-gray-400 text-sm">Always exploring new technologies and methodologies</p>
               </div>
               
-              <div className="text-center p-6 bg-gray-800/50 rounded-lg backdrop-blur-sm">
+              <div data-aos="fade-up" className="text-center p-6 bg-gray-800/50 rounded-lg backdrop-blur-sm">
                 <Heart className="text-emerald-400 mx-auto mb-3" size={32} />
                 <h4 className="font-semibold text-white mb-2">Collaborative Spirit</h4>
                 <p className="text-gray-400 text-sm">Thrives in team environments and values diverse perspectives</p>
               </div>
               
-              <div className="text-center p-6 bg-gray-800/50 rounded-lg backdrop-blur-sm">
+              <div data-aos="fade-right" className="text-center p-6 bg-gray-800/50 rounded-lg backdrop-blur-sm">
                 <Target className="text-purple-400 mx-auto mb-3" size={32} />
                 <h4 className="font-semibold text-white mb-2">Goal-Oriented</h4>
                 <p className="text-gray-400 text-sm">Focused on creating meaningful impact through technology</p>

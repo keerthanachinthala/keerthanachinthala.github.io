@@ -16,7 +16,8 @@ const Experience = () => {
         'Implemented a diffusion model pipeline to generate synthetic pathology patches for data augmentation',
         'Evaluated generative output using manifold-based metrics and incorporated it into an end-to-end workflow',
       ],
-      type: 'research'
+      type: 'research',
+      logo: '/ufvetmed_logo.png'
     },
     {
       title: 'Research Apprentice',
@@ -29,7 +30,8 @@ const Experience = () => {
         'Evaluated model outputs for environmental insights and ground truth validation',
         'Learned to handle real-world scientific data in resource-constrained scenarios'
       ],
-      type: 'Apprentice'
+      type: 'Apprentice',
+      logo: '/TerraviewOS_1.png'
     },
     {
       title: 'Software Developement Engineer (IC2)',
@@ -46,7 +48,8 @@ const Experience = () => {
         'Conducted performance profiling and implemented backend optimizations that improved response times for data-heavy views',
         'Gained a comprehensive understanding of enterprise-scale codebases and best practices in release cycles, testing, and deployment'
       ],
-      type: 'Full Time'
+      type: 'Full Time',
+      logo: '/oracle-corporation-logo.svg'
     }
   ];
 
@@ -66,7 +69,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-[#0b0b0b] section-hero-body">
       <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Experience</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-400 to-emerald-400 mx-auto mb-6"></div>
@@ -86,11 +89,16 @@ const Experience = () => {
                   className={`relative flex items-center ${
                     index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
+                  
                 >
                   {/* Timeline dot */}
-                  <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bg-gray-800 border-4 border-blue-400 rounded-full z-10"></div>
+                  <div className="absolute left-4 md:left-1/2 transform md:-translate-x-1/2 w-10 h-10 rounded-full overflow-hidden bg-white z-10 flex items-center justify-center shadow-md border border-blue-300">
+                    <img src={experience.logo} alt={`${experience.organization} logo`} className="w-10 h-10 object-contain" />
+                  </div>
 
-                  <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
+                  <div data-aos={index % 2 === 0 ? 'fade-right' : 'fade-left'}
+                    data-aos-anchor-placement="top-bottom" 
+                    className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-8' : 'md:pl-8'}`}>
                     <div className={`ml-12 md:ml-0 bg-gray-700/50 backdrop-blur-sm rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 border border-gray-600/30`}>
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center space-x-2">
@@ -98,6 +106,7 @@ const Experience = () => {
                           <span className="text-sm font-medium text-gray-400">{experience.period}</span>
                         </div>
                       </div>
+                      
 
                       <h3 className="text-xl font-bold text-white mb-2">{experience.title}</h3>
                       <h4 className="text-lg font-semibold text-blue-400 mb-1">{experience.organization}</h4>

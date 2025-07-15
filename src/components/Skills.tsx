@@ -33,7 +33,7 @@ const Skills = () => {
         { name: 'HTML5', logo: 'https://cdn.simpleicons.org/html5/E34F26' },
         { name: 'CSS', logo: 'https://cdn.simpleicons.org/css/1572B6' },
         { name: 'Tailwind CSS', logo: 'https://cdn.simpleicons.org/tailwindcss/06B6D4' },
-        // { name: 'Express', logo: 'https://cdn.simpleicons.org/express/000000' },
+        // { name: 'Responsive Design', logo: 'https://cdn.simpleicons.org/express/000000' },
       ]
     },
     {
@@ -53,18 +53,30 @@ const Skills = () => {
       skills: [
         { name: 'Git', logo: 'https://cdn.simpleicons.org/git/F05032' },
         { name: 'GitHub', logo: 'https://cdn.simpleicons.org/github/181717' },
-        { name: 'MySQL', logo: 'https://cdn.simpleicons.org/mysql/4479A1' },
+        { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg' },
         { name: 'SQLAlchemy', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlalchemy/sqlalchemy-original.svg' },
         { name: 'Docker', logo: 'https://cdn.simpleicons.org/docker/2496ED' },
-        { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg' },
+        { name: 'GCP', logo: 'https://img.icons8.com/?size=100&id=20774&format=png&color=000000' },
         { name: 'Jira', logo: 'https://cdn.simpleicons.org/jira/0052CC' },
         { name: 'Confluence', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/confluence/confluence-original.svg' },
+      ]
+    },
+    {
+      title: 'Practices',
+      icon: <Palette className="text-emerald-400" size={24} />,
+      skills: [
+        { name: 'Object Oriented Programming (OOP)', logo: '' },
+        { name: 'Test Driven Development (TDD)', logo: '' },
+        { name: 'Database design', logo: '' },
+        { name: 'Event‑driven architecture', logo: '' },
+        { name: 'Agile', logo:'' },
+        { name: 'Scrum', logo: '' }
       ]
     }
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-900 section-hero-body">
+    <section data-aos='slide-up' id="skills" className="py-20 bg-gray-900 section-hero-body">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -91,14 +103,17 @@ const Skills = () => {
   {category.skills.map((skill, skillIndex) => (
     <div
       key={skillIndex}
-      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-800/40 border border-emerald-400 text-sm text-gray-200"
+      // remvoved the emerald border ' border border-emerald-400 and changed the bg color from grey-800/40 to present.
+      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-700 text-sm text-gray-200"
     >
+      {skill.logo && (
       <img
         src={skill.logo}
         alt={skill.name}
         className="w-5 h-5 object-contain"
         loading="lazy"
       />
+      )}
       <span>{skill.name}</span>
     </div>
   ))}
