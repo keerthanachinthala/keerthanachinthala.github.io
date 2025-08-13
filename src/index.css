@@ -9,14 +9,22 @@
     linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
     linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
-    #0b0b0b; /* darker background */
+    #0b0b0b;
+    /* transparent; */
+    /* rgba(11, 11, 11, 0.7); */
+  /* mix-blend-mode: lighten; */
+  /* backdrop-filter: blur(4px); */
+
   background-size:
     40px 40px,
     40px 40px,
     8px 8px,
     8px 8px;
 
-}
+  /* z-index: 1;
+  position: relative; */
+
+  }
 
 .dashed-grid-paper {
 
@@ -68,5 +76,7 @@
   from, to { border-color: transparent }
   50% { border-color: rgb(235, 175, 9); }
 }
+
+
 
 

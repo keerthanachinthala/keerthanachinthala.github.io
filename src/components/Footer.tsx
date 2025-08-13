@@ -47,7 +47,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer id='footer' className="bg-gray-900 text-white py-12 relative section-hero-body">
+    <footer id='footer' className="text-white py-12 relative section-hero-body">
       {/* <div className="container mx-auto px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
@@ -77,7 +77,7 @@ const Footer = () => {
           </div>
         </div>
       </div> */}
-      <div className='p-8'>
+      <div className='p-8 relative'  style={{zIndex:5}}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12">
         {/* Left Column – Centered Keerthana Info */}
         <div className="flex flex-col justify-center items-center text-center space-y-4">
@@ -145,7 +145,7 @@ const Footer = () => {
         </div>
       </div>
       </div>
-      <div className="border-t border-gray-800 pt-8 text-center">
+      <div className="border-t border-gray-800 pt-8 text-center relative"  style={{zIndex:5}}>
               <p className="text-gray-400 text-sm">
                 &copy; {new Date().getFullYear()} Keerthana Chinthala. All rights reserved. 
                 This portfolio showcases my journey as a graduate student and aspiring developer.

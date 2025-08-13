@@ -25,8 +25,8 @@ const Hero = () => {
   document.body.removeChild(link);
   };
 
-  return (
-    <section data-aos="fade-down" className="min-h-screen flex items-center justify-center  pt-20 relative overflow-hidden section-hero-body">
+  return (// to classname added  lg:pt-20 and lg:items-center so that even in smaller screen laptop, its properly visible -nvm removed this change
+    <section data-aos="fade-down" className="min-h-screen flex items-start justify-center pt-20 relative overflow-hidden section-hero-body">
       {/* Soft background elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl"></div>
@@ -35,11 +35,13 @@ const Hero = () => {
         <div className="absolute bottom-20 right-1/3 w-28 h-28 bg-pink-500 rounded-full blur-2xl"></div>
       </div>
       
-      <div className="container mx-auto px-6 py-20 relative z-10">
+      <div className="container mx-auto px-6 py-20" style={{position: 'relative', zIndex: 2}}>  {/* Removed relative z-10 */}
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
             {/* Anime sketch container */}
-            <div className="relative w-48 h-48 mx-auto mb-6">
+            <div className="relative w-48 h-48 mx-auto mb-6" //decreased the w and h from 48 to 24
+            data-aos="zoom-in"
+            > 
               {/* Soft glow background */}
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400/30 to-emerald-400/30 rounded-full blur-xl"></div>
               

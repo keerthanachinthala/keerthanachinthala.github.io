@@ -31,11 +31,12 @@ const Header = () => {
   };
 
   return (
-    // I add this in the blank quotes is I want a bulred effect 'backdrop-blur-sm  shadow-lg'
-    <header className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 ${
+    // I add this in the blank quotes if I want a blured effect 'backdrop-blur-sm  shadow-lg'. I Changed the top from 10 to 5'
+    <header className={`fixed top-5 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled ? '' : 'bg-transparent'
-    }`}>
-      <nav className="container mx-auto px-6 py-4 navbar">
+    }`}
+    >
+      <nav className="container mx-auto px-6 py-4 navbar" data-aos="fade-up">
         <div className="flex items-center justify-between">
           {/* <div className="text-2xl font-bold text-white">
             <span className="text-blue-400 italic">K</span>C

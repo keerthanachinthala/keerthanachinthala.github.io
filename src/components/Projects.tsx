@@ -100,7 +100,7 @@ const Projects = () => {
           </div>
           {/* Carousel Container */}
           <div className="relative">
-            <div className="overflow-hidden">
+            <div className="overflow-hidden py-6">
               <div 
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ 

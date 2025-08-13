@@ -75,8 +75,8 @@ const Skills = () => {
     }
   ];
 
-  return (
-    <section data-aos='slide-up' id="skills" className="py-20 bg-gray-900 section-hero-body">
+  return (// added position relative as well for the z-index to work
+    <section id="skills" className="py-20 bg-gray-900 section-hero-body relative" style={{zIndex: 5}}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
@@ -100,25 +100,24 @@ const Skills = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-3 mt-4">
-  {category.skills.map((skill, skillIndex) => (
-    <div
-      key={skillIndex}
-      // remvoved the emerald border ' border border-emerald-400 and changed the bg color from grey-800/40 to present.
-      className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-gray-700 text-sm text-gray-200"
-    >
-      {skill.logo && (
-      <img
-        src={skill.logo}
-        alt={skill.name}
-        className="w-5 h-5 object-contain"
-        loading="lazy"
-      />
-      )}
-      <span>{skill.name}</span>
-    </div>
-  ))}
-</div>
-
+                  {category.skills.map((skill, skillIndex) => (
+                    <div
+                      key={skillIndex}
+                      // remvoved the emerald border ' border border-emerald-400 and changed the bg color from grey-800/40 to present.
+                      className="flex items-center backdrop-blur-sm gap-2 px-3 py-1.5 rounded-full bg-gray-700 text-sm text-gray-200"
+                    >
+                      {skill.logo && (
+                      <img
+                        src={skill.logo}
+                        alt={skill.name}
+                        className="w-5 h-5 object-contain"
+                        loading="lazy"
+                      />
+                      )}
+                      <span>{skill.name}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
