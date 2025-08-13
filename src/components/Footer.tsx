@@ -48,35 +48,6 @@ const Footer = () => {
 
   return (
     <footer id='footer' className="text-white py-12 relative section-hero-body">
-      {/* <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="mb-8">
-              <h3 className="text-2xl font-bold mb-2">
-                <span className="text-blue-400">Keerthana</span> Chinthala
-              </h3>
-              <p className="text-gray-400">
-                Graduate Student • Developer • Researcher
-              </p>
-            </div>
-
-            <div className="flex justify-center items-center space-x-2 text-gray-400 mb-8">
-              <span>Made with</span>
-              <Heart className="text-red-400" size={16} fill="currentColor" />
-              <span>and lots of sugar</span>
-              <Cookie size={24} className="text-yellow-500" />
-
-            </div>
-
-            <div className="border-t border-gray-800 pt-8">
-              <p className="text-gray-400 text-sm">
-                &copy; {new Date().getFullYear()} Keerthana Chinthala. All rights reserved. 
-                This portfolio showcases my journey as a graduate student and aspiring developer.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className='p-8 relative'  style={{zIndex:5}}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 px-6 md:px-12">
         {/* Left Column – Centered Keerthana Info */}

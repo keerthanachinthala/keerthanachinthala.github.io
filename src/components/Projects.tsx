@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ExternalLink, Github, Brain, ShoppingCart, BarChart3, ChevronLeft, ChevronRight, Sprout, FileText, MapPin } from 'lucide-react';
+import {Github, BarChart3, ChevronLeft, ChevronRight, Sprout, FileText, MapPin } from 'lucide-react';
 
 
 
@@ -99,140 +99,123 @@ const Projects = () => {
             </p>
           </div>
           {/* Carousel Container */}
-          <div className="relative">
-            <div className="overflow-hidden py-6">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ 
-                  transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-                  width: `${(projects.length / itemsPerView) * 100}%`
-                }}
-              >
-                {projects.map((project, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 px-4"
-                    style={{ width: `${100 / projects.length}%` }}
+<div className="relative">
+  <div className="overflow-hidden py-6">
+    <div 
+      className="flex transition-transform duration-500 ease-in-out"
+      style={{ 
+        transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+      }}
+    >
+      {projects.map((project, index) => (
+        <div
+          key={index}
+          className="flex-shrink-0 px-2 md:px-4 w-full md:w-1/2"
+        >
+          <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl p-4 md:p-6 h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-600/30">
+
+            {/* Top Section: Content */}
+            <div className="space-y-4">
+              {/* Project Image */}
+              <div className="relative mb-6 overflow-hidden rounded-lg">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              </div>
+              {/* Title & Icon */}
+              <div className="flex items-center space-x-3">
+                {project.icon}
+                <h3 className="text-xl font-bold text-white">{project.title}</h3>
+              </div>
+              {/* Description */}
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {project.description}
+              </p>
+              {/* Key Features */}
+              <div>
+                <h4 className="font-semibold text-white mb-2 text-sm">Key Features:</h4>
+                <ul className="space-y-1">
+                  {project.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="text-gray-300 text-xs flex items-start">
+                      <span className="text-blue-400 mr-2 text-sm">•</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-1">
+                {project.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-2 py-1 bg-gray-600/50 text-gray-300 text-xs rounded-full border border-gray-500/30"
                   >
-                    <div className="bg-gray-700/50 backdrop-blur-sm rounded-2xl p-6 h-full flex flex-col justify-between hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-600/30">
-  
-                      {/* Top Section: Content */}
-                      <div className="space-y-4">
-                        {/* Project Image */}
-                        <div className="relative mb-6 overflow-hidden rounded-lg">
-                          <img
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                        </div>
-
-                        {/* Title & Icon */}
-                        <div className="flex items-center space-x-3">
-                          {project.icon}
-                          <h3 className="text-xl font-bold text-white">{project.title}</h3>
-                        </div>
-
-                        {/* Description */}
-                        <p className="text-gray-300 text-sm leading-relaxed">
-                          {project.description}
-                        </p>
-
-                        {/* Key Features */}
-                        <div>
-                          <h4 className="font-semibold text-white mb-2 text-sm">Key Features:</h4>
-                          <ul className="space-y-1">
-                            {project.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="text-gray-300 text-xs flex items-start">
-                                <span className="text-blue-400 mr-2 text-sm">•</span>
-                                {feature}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Technologies */}
-                        <div className="flex flex-wrap gap-1">
-                          {project.technologies.map((tech, techIndex) => (
-                            <span
-                              key={techIndex}
-                              className="px-2 py-1 bg-gray-600/50 text-gray-300 text-xs rounded-full border border-gray-500/30"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Bottom Section: Buttons */}
-                      <div className="flex space-x-2 pt-4">
-                        {index === 0 ? (
-                          <a
-                            href='https://link.springer.com/chapter/10.1007/978-981-99-3250-4_66'
-                            className="flex-1 inline-flex items-center justify-center px-3 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-500 transition-colors duration-200"
-                          >
-                            <FileText className="text-white mr-1" size={14} />
-                            Paper
-                          </a>
-                        ) : (
-                          <a
-                            href={project.githubUrl}
-                            className="flex-1 inline-flex items-center justify-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-500 transition-colors duration-200"
-                          >
-                            <Github className="mr-1" size={14} />
-                            Code
-                          </a>
-                        )}
-
-                        {/* If needed, re-enable Demo button */}
-                        {/* <a
-                          href={project.liveUrl}
-                          className="flex-1 inline-flex items-center justify-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-700 transition-colors duration-200"
-                        >
-                          <ExternalLink className="mr-1" size={14} />
-                          Demo
-                        </a> */}
-                      </div>
-                    </div>
-
-                  </div>
+                    {tech}
+                  </span>
                 ))}
               </div>
             </div>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-700/80 hover:bg-gray-600/80 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 z-10 backdrop-blur-sm"
-              disabled={currentIndex === 0}
-            >
-              <ChevronLeft className={`${currentIndex === 0 ? 'text-gray-500' : 'text-white'}`} size={24} />
-            </button>
-            
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-700/80 hover:bg-gray-600/80 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 z-10 backdrop-blur-sm"
-              disabled={currentIndex >= maxIndex}
-            >
-              <ChevronRight className={`${currentIndex >= maxIndex ? 'text-gray-500' : 'text-white'}`} size={24} />
-            </button>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center space-x-2 mt-8">
-              {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                    index === currentIndex 
-                      ? 'bg-blue-400 scale-125' 
-                      : 'bg-gray-500 hover:bg-gray-400'
-                  }`}
-                />
-              ))}
+            {/* Bottom Section: Buttons */}
+            <div className="flex space-x-2 pt-4">
+              {index === 0 ? (
+                <a
+                  href='https://link.springer.com/chapter/10.1007/978-981-99-3250-4_66'
+                  className="flex-1 inline-flex items-center justify-center px-3 py-2 bg-gray-600 text-white text-sm rounded-lg hover:bg-gray-500 transition-colors duration-200"
+                >
+                  <FileText className="text-white mr-1" size={14} />
+                  Paper
+                </a>
+              ) : (
+                <a
+                  href={project.githubUrl}
+                  className="flex-1 inline-flex items-center justify-center px-3 py-2 bg-blue-600 text-white text-sm rounded-lg hover:bg-blue-500 transition-colors duration-200"
+                >
+                  <Github className="mr-1" size={14} />
+                  Code
+                </a>
+              )}
             </div>
           </div>
+        </div>
+      ))}
+    </div>
+  </div>
+  
+  {/* Navigation Buttons */}
+  <button
+    onClick={prevSlide}
+    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-700/80 hover:bg-gray-600/80 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 z-10 backdrop-blur-sm"
+    disabled={currentIndex === 0}
+  >
+    <ChevronLeft className={`${currentIndex === 0 ? 'text-gray-500' : 'text-white'}`} size={24} />
+  </button>
+  
+  <button
+    onClick={nextSlide}
+    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-700/80 hover:bg-gray-600/80 rounded-full p-3 shadow-lg hover:shadow-xl transition-all duration-200 z-10 backdrop-blur-sm"
+    disabled={currentIndex >= maxIndex}
+  >
+    <ChevronRight className={`${currentIndex >= maxIndex ? 'text-gray-500' : 'text-white'}`} size={24} />
+  </button>
+  
+  {/* Dots Indicator */}
+  <div className="flex justify-center space-x-2 mt-8">
+    {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+      <button
+        key={index}
+        onClick={() => setCurrentIndex(index)}
+        className={`w-3 h-3 rounded-full transition-all duration-200 ${
+          index === currentIndex 
+            ? 'bg-blue-400 scale-125' 
+            : 'bg-gray-500 hover:bg-gray-400'
+        }`}
+      />
+    ))}
+  </div>
+</div>
         </div>
       </div>
     </section>

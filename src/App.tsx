@@ -6,7 +6,6 @@ import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Recommendations from './components/Recommendations';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -23,19 +22,9 @@ const App: React.FC = () => {
     });
   }, []);
 
-  // return (
-  //   <div className="relative z-0">
-  //     <BlobBackground />
-  //     {/* Your existing portfolio content */}
-  //   </div>
-  // );
-
   return (
     <div className="min-h-screen">
-      {/* <div className="fixed inset-0 z-8 pointer-events-none"> */}
-        <BlobBackground />
-      {/* </div> */}
-      {/* <div className='relative z-20'> */}
+      <BlobBackground />
       <Header />
       <main className='section-hero-body'>
         <Hero />
@@ -46,7 +35,6 @@ const App: React.FC = () => {
         <Recommendations />
       </main>
       <Footer />
-      {/* </div> */}
     </div>
   );
 };

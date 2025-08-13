@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code, Database, Brain, Palette } from 'lucide-react';
 
 const Skills = () => {
@@ -89,36 +88,44 @@ const Skills = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {skillCategories.map((category, index) => (
-              <div
-                key={index}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 border border-gray-700/30"
-              >
-                <div className="flex items-center mb-6">
-                  {/* {category.icon} */}
-                  <h3 className="text-xl font-semibold text-white ml-3">{category.title}</h3>
+          {skillCategories.map((category, index) => (
+            <div
+              key={index}
+              className="bg-gray-800/50 backdrop-blur-sm rounded-xl shadow-lg p-8 
+                      hover:shadow-xl hover:bg-gray-800/60 hover:-translate-y-2 hover:scale-105
+                      transition-all duration-300 border border-gray-700/30 hover:border-gray-600/50 group"
+            >
+              <div className="flex items-center mb-6">
+                <div className="transform group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
+                  {category.icon}
                 </div>
-
-                <div className="flex flex-wrap gap-3 mt-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div
-                      key={skillIndex}
-                      // remvoved the emerald border ' border border-emerald-400 and changed the bg color from grey-800/40 to present.
-                      className="flex items-center backdrop-blur-sm gap-2 px-3 py-1.5 rounded-full bg-gray-700 text-sm text-gray-200"
-                    >
-                      {skill.logo && (
-                      <img
-                        src={skill.logo}
-                        alt={skill.name}
-                        className="w-5 h-5 object-contain"
-                        loading="lazy"
-                      />
-                      )}
-                      <span>{skill.name}</span>
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-xl font-semibold text-white ml-3 group-hover:text-blue-200 transition-colors duration-300">
+                  {category.title}
+                </h3>
               </div>
+              
+              <div className="flex flex-wrap gap-3 mt-4">
+                {category.skills.map((skill, skillIndex) => (
+                <div
+                  key={skillIndex}
+                  className="flex items-center backdrop-blur-sm gap-2 px-3 py-1.5 rounded-full bg-gray-700 text-sm text-gray-200"
+                >
+                  {skill.logo && (
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      className="w-5 h-5 object-contain"
+                      loading="lazy"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  )}
+                  <span>{skill.name}</span>
+                </div>
+                ))}
+              </div>
+            </div>
             ))}
           </div>
         </div>
